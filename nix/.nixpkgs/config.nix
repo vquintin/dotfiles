@@ -20,7 +20,7 @@
         sbt
         media_text
         openjdk
-        ruby
+        ruby_2_4
         vagrant
       ];
     };
