@@ -45,6 +45,7 @@
       name = "basic-env";
       paths = [
 	cli_utils
+        zsh
       ];
     };
 
