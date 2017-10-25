@@ -36,6 +36,7 @@
         gui_utils
         pavucontrol
         termite
+        thunderbird
         xfce.thunar
         xscreensaver
       ];
