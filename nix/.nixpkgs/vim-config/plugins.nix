@@ -87,4 +87,15 @@
     };
     dependencies = [];
   };
+
+  vim-bepo = vimUtils.buildVimPluginFrom2Nix {
+    name = "vim-bepo-2017-10-25";
+    src = fetchFromGitHub {
+      owner = "michamos";
+      repo = "vim-bepo";
+      rev = "f861bfe0bb59303436284368f6ab83ffce5121b8";
+      sha256 = "1b3jhapb862kmwp8arjnq470r47qmc2dqa5x1qk7gbl82i8m3n3d";
+    };
+    dependencies = [];
+  };
 }

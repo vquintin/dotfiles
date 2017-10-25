@@ -80,6 +80,7 @@ in with pkgs; vim_configurable.customize {
         "vim-airline"
         "vim-airline-themes"
         "sleuth"
+        "vim-bepo"
         "vim-go"
         "vim-javascript"
         "vim-vue"
