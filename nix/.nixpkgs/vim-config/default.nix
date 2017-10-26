@@ -61,8 +61,6 @@ in with pkgs; vim_configurable.customize {
       autocmd FileType go nmap <leader>t  <Plug>(go-test)
       autocmd FileType go nmap <Leader>c  <Plug>(go-coverage-toggle)
 
-      au FileType pony setl sw=2 sts=2 et
-      au BufRead,BufNewFile *.tag :set filetype=html
 
       let g:elm_format_autosave = 1
     '';
@@ -82,14 +80,13 @@ in with pkgs; vim_configurable.customize {
         "sleuth"
         "vim-bepo"
         "vim-go"
-        "vim-javascript"
-        "vim-vue"
         "elm-vim"
-        "vim-pony"
         "nim-vim"
-        "vim-elixir"
-        "alchemist-vim"
         "hexmode"
+        "haskell-vim"
+        "Hoogle"
+        "ghc-mod-vim"
+        "stylish-haskell"
       ]; }
     ];
   };

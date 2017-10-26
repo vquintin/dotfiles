@@ -41,6 +41,7 @@
         git
         go
         python
+        ripgrep
         stack
       ];
     };
@@ -100,6 +101,7 @@
         pv
         stow
         tree
+        xxd
       ];
     };
 
@@ -115,7 +117,7 @@
     internet_prgms = with pkgs; buildEnv {
       name = "internet-pgrms";
       paths = [
-        qbittorrent
+        transmission_remote_gtk
         remmina
       ];
     };
@@ -154,6 +156,7 @@
     media_video = with pkgs; buildEnv {
       name = "media-video";
       paths = [
+        mpv
         smplayer
         vdpauinfo
         vlc
