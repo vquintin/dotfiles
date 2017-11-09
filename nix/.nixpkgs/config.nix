@@ -24,6 +24,7 @@
     basic_home = with pkgs; buildEnv {
       name = "basic-home";
       paths = [
+        accounting
         basic_gui_env
         dev_env
         games
@@ -40,6 +41,7 @@
         my_vim
         git
         go
+        jetbrains.idea-community
         python
         ripgrep
         stack
@@ -51,7 +53,6 @@
       paths = [
         basic_gui_env
         dev_env
-        jetbrains.idea-community
         jq
         sbt
         media_text
@@ -66,6 +67,7 @@
       paths = [
         awesome
         cli_utils
+        cups
         evince
         firefox
         gnome3.file-roller
@@ -156,6 +158,7 @@
     media_video = with pkgs; buildEnv {
       name = "media-video";
       paths = [
+        kodi
         mpv
         smplayer
         vdpauinfo
