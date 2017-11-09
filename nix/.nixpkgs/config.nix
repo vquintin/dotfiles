@@ -37,6 +37,7 @@
     dev_env = with pkgs; buildEnv {
       name = "dev-env";
       paths = [
+        atom
         my_vim
         git
         go
@@ -51,6 +52,7 @@
       paths = [
         basic_gui_env
         dev_env
+        google-drive-ocamlfuse
         jetbrains.idea-community
         jq
         sbt
@@ -111,6 +113,7 @@
         baobab
         gparted
         glxinfo
+        xorg.xev
       ];
     };
 
