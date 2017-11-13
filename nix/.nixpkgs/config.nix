@@ -17,6 +17,7 @@
         cbatticon
         networkmanagerapplet
         rfkill
+        wirelesstools
         xorg.xbacklight
       ];
     };
@@ -38,12 +39,14 @@
     dev_env = with pkgs; buildEnv {
       name = "dev-env";
       paths = [
+        atom
         my_vim
         git
         go
         jetbrains.idea-community
         python
         ripgrep
+        sbt
         stack
       ];
     };
@@ -53,8 +56,8 @@
       paths = [
         basic_gui_env
         dev_env
+        google-drive-ocamlfuse
         jq
-        sbt
         media_text
         openjdk
         ruby_2_4
@@ -103,6 +106,7 @@
         pv
         stow
         tree
+        usbutils
         xxd
       ];
     };
@@ -113,6 +117,7 @@
         baobab
         gparted
         glxinfo
+        xorg.xev
       ];
     };
 
