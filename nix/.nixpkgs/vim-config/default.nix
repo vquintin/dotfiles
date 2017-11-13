@@ -87,6 +87,7 @@ in with pkgs; vim_configurable.customize {
         "Hoogle"
         "ghc-mod-vim"
         "stylish-haskell"
+        "vim-scala"
       ]; }
     ];
   };

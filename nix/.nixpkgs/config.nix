@@ -44,6 +44,7 @@
         python
         ripgrep
         stack
+        vscode
       ];
     };
 
@@ -103,6 +104,7 @@
         pv
         stow
         tree
+        unzip
         xxd
       ];
     };
