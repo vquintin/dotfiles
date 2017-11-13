@@ -48,6 +48,7 @@
         ripgrep
         sbt
         stack
+        vscode
       ];
     };
 
@@ -107,6 +108,7 @@
         stow
         tree
         usbutils
+        unzip
         xxd
       ];
     };
