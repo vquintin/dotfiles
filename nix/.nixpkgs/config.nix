@@ -33,6 +33,7 @@
         media_picture
         media_sound
         media_video
+        media_text
       ];
     };
 
