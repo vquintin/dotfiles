@@ -17,6 +17,7 @@
         cbatticon
         networkmanagerapplet
         rfkill
+        wirelesstools
         xorg.xbacklight
       ];
     };
@@ -24,6 +25,7 @@
     basic_home = with pkgs; buildEnv {
       name = "basic-home";
       paths = [
+        accounting
         basic_gui_env
         dev_env
         games
@@ -41,9 +43,11 @@
         my_vim
         git
         go
+        jetbrains.idea-community
         python
         ripgrep
         scala
+        sbt
         stack
         vscode
       ];
@@ -55,9 +59,7 @@
         basic_gui_env
         dev_env
         google-drive-ocamlfuse
-        jetbrains.idea-community
         jq
-        sbt
         media_text
         openjdk
         ruby_2_4
@@ -70,6 +72,7 @@
       paths = [
         awesome
         cli_utils
+        cups
         evince
         firefox
         gnome3.file-roller
@@ -105,6 +108,7 @@
         pv
         stow
         tree
+        usbutils
         unzip
         xxd
       ];
@@ -162,6 +166,7 @@
     media_video = with pkgs; buildEnv {
       name = "media-video";
       paths = [
+        kodi
         mpv
         smplayer
         vdpauinfo

@@ -80,6 +80,7 @@ in with pkgs; vim_configurable.customize {
         "sleuth"
         "vim-bepo"
         "vim-go"
+        "vimproc"
         "elm-vim"
         "nim-vim"
         "hexmode"
