@@ -47,6 +47,7 @@
         jetbrains.idea-community
         python
         ripgrep
+        scala
         sbt
         stack
         vscode
