@@ -43,6 +43,7 @@
         go
         python
         ripgrep
+        scala
         stack
         vscode
       ];
