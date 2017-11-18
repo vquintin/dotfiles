@@ -63,6 +63,13 @@ in with pkgs; vim_configurable.customize {
 
 
       let g:elm_format_autosave = 1
+
+      " Configure haskell extensions
+      autocmd FileType haskell nmap <silent> <leader>e :GhcModTypeInsert<CR>
+      autocmd FileType haskell nmap <silent> <leader>s :GhcModSplitFunCase<CR>
+      autocmd FileType haskell nmap <silent> <leader>i :GhcModType<CR>
+      autocmd FileType haskell nmap <silent> <leader>c :GhcModTypeClear<CR>
+      autocmd FileType haskell nmap <silent> <leader>g :GhcModSigCodegen<CR>
     '';
 
     vam.knownPlugins = vimPlugins // my_plugins;
