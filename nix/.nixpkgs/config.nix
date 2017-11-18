@@ -12,9 +12,9 @@
     home_laptop = with pkgs; buildEnv {
       name = "home-laptop";
       paths = [
-        basic_home
         blueman
         cbatticon
+        home_gui
         networkmanagerapplet
         rfkill
         wirelesstools
@@ -22,12 +22,20 @@
       ];
     };
 
-    basic_home = with pkgs; buildEnv {
-      name = "basic-home";
+    home_server = with pkgs; buildEnv {
+      name = "home-gui";
+      paths = [
+        cli_utils
+        dev_cli_env
+      ];
+    };
+
+    home_gui = with pkgs; buildEnv {
+      name = "home-gui";
       paths = [
         accounting
         basic_gui_env
-        dev_env
+        dev_gui_env
         games
         internet_prgms
         media_picture
@@ -37,34 +45,41 @@
       ];
     };
 
-    dev_env = with pkgs; buildEnv {
-      name = "dev-env";
-      paths = [
-        atom
-        my_vim
-        git
-        go
-        jetbrains.idea-community
-        python
-        ripgrep
-        scala
-        sbt
-        stack
-        vscode
-      ];
-    };
-
     mics_desktop = with pkgs; buildEnv {
       name = "mics-desktop";
       paths = [
         basic_gui_env
-        dev_env
+        dev_gui_env
         google-drive-ocamlfuse
         jq
         media_text
         openjdk
         ruby_2_4
         vagrant
+      ];
+    };
+
+    dev_gui_env = with pkgs; buildEnv {
+      name = "dev-gui-env";
+      paths = [
+        atom
+        dev_cli_env
+        jetbrains.idea-community
+        vscode
+      ];
+    };
+
+    dev_cli_env = with pkgs; buildEnv {
+      name = "dev-cli-env";
+      paths = [
+        my_vim
+        git
+        go
+        python
+        ripgrep
+        scala
+        sbt
+        stack
       ];
     };
 
