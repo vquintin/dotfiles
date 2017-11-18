@@ -23,7 +23,7 @@
     };
 
     home_server = with pkgs; buildEnv {
-      name = "home-gui";
+      name = "home-server";
       paths = [
         cli_utils
         dev_cli_env
