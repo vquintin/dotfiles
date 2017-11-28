@@ -8,6 +8,7 @@
 
   packageOverrides = pkgs_: with pkgs_; {
     my_vim = import ./vim-config { inherit pkgs ; };
+    vimpager = import ./vimpager { inherit pkgs ; };
 
     home_laptop = with pkgs; buildEnv {
       name = "home-laptop";
@@ -53,6 +54,7 @@
         dev_gui_env
         google-drive-ocamlfuse
         jq
+        media_picture
         media_text
         openjdk
         ruby_2_4
@@ -73,6 +75,7 @@
     dev_cli_env = with pkgs; buildEnv {
       name = "dev-cli-env";
       paths = [
+        ammonite
         my_vim
         git
         go
@@ -166,6 +169,7 @@
         feh
         gphoto2
         gimp
+        graphviz
         rawtherapee
         shotwell
         ufraw
