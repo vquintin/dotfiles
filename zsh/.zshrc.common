@@ -13,3 +13,5 @@ SAVEHIST=5000
 setopt notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
+bindkey '^[[Z' reverse-menu-complete
+
