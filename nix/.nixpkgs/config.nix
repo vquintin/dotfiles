@@ -16,6 +16,7 @@
         cbatticon
         home_gui
         networkmanagerapplet
+        powertop
         rfkill
         wirelesstools
         xorg.xbacklight
