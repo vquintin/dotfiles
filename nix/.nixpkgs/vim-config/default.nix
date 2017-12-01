@@ -96,6 +96,7 @@ in with pkgs; vim_configurable.customize {
         "ghc-mod-vim"
         "stylish-haskell"
         "vim-scala"
+        "vimpager"
       ]; }
     ];
   };

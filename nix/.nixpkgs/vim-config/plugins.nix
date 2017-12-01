@@ -98,4 +98,14 @@
     };
     dependencies = [];
   };
+  vimpager = vimUtils.buildVimPluginFrom2Nix {
+    name = "vimpager-2017-11-25";
+    src = fetchFromGitHub {
+      owner = "rkitover";
+      repo = "vimpager";
+      rev = "f03db2eb63993d85974913ff017d684069530e87";
+      sha256 = "07asj1ggdxk1bx3p0raczwj830kd3hbnra1plm5gmq0lcymnpgfw";
+    };
+    dependencies = [];
+  };
 }
