@@ -120,6 +120,7 @@
     cli_utils = with pkgs; buildEnv {
       name = "cli-utils";
       paths = [
+        dmidecode
         file
         fzf
         htop

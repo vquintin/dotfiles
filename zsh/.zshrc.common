@@ -15,4 +15,5 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 bindkey '^[[Z' reverse-menu-complete
 EDITOR=vim
+PATH=$PATH:~/.local/bin
 
