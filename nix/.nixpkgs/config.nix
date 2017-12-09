@@ -56,7 +56,11 @@
         jq
         media_picture
         media_text
+        nodePackages.grunt-cli
+        nodePackages.npm
+        nodejs
         openjdk
+        phantomjs2
         ruby_2_4
         vagrant
       ];
