@@ -124,11 +124,13 @@
         file
         fzf
         htop
+        iotop
         lsof
         pciutils
         pv
         stow
         tree
+        tmux
         usbutils
         unzip
         xxd
