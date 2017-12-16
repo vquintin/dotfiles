@@ -1,7 +1,7 @@
 { pkgs }:
 
 let
-my_plugins = import ./plugins.nix { inherit (pkgs) vimUtils fetchFromGitHub; };
+my_plugins = import ./plugins.nix { inherit (pkgs) vimUtils fetchFromGitHub pkgs; };
 
 in with pkgs; vim_configurable.customize {
   name = "vim";
@@ -32,6 +32,7 @@ in with pkgs; vim_configurable.customize {
         "stylish-haskell"
         "vim-scala"
         "vimpager"
+        "languageclient"
       ]; }
     ];
   };

@@ -33,6 +33,18 @@ let g:ctrlp_use_caching = 0
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 
+" LSP
+
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'haskell': ['hie', '--lsp'],
+    \ }
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
 
