@@ -68,6 +68,7 @@
         atom
         dev_cli_env
         jetbrains.idea-community
+        mysql-workbench
         vscode
       ];
     };
