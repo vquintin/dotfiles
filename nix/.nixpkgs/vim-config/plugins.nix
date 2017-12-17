@@ -119,11 +119,13 @@
       sha256 = "1rz5b5hicbrd5f6dns1x68vzyizfmpvkfqr8331a0arxbfsm80zs";
     };
     dependencies = [];
-    buildInputs = [ pkgs.curl ];
+    buildInputs = [ pkgs.rustChannels.stable.rust ];
     buildPhase = ''
       export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
+      export HOME=$TMP
+      ulimit -S -a
       patchShebangs .
-      ./install.sh
+      ./install.sh || ./install.sh
     '';
   };
 }

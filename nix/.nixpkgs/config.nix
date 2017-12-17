@@ -85,6 +85,7 @@
         go
         python
         ripgrep
+        rustup
         scala
         sbt
         stack
@@ -131,6 +132,7 @@
         iotop
         lsof
         pciutils
+        psmisc
         pv
         stow
         tree
