@@ -56,7 +56,11 @@
         jq
         media_picture
         media_text
+        nodePackages.grunt-cli
+        nodePackages.npm
+        nodejs
         openjdk
+        phantomjs2
         ruby_2_4
         vagrant
       ];
@@ -82,6 +86,7 @@
         go
         python
         ripgrep
+        rustup
         scala
         sbt
         stack
@@ -121,14 +126,18 @@
     cli_utils = with pkgs; buildEnv {
       name = "cli-utils";
       paths = [
+        dmidecode
         file
         fzf
         htop
+        iotop
         lsof
         pciutils
+        psmisc
         pv
         stow
         tree
+        tmux
         usbutils
         unzip
         xxd

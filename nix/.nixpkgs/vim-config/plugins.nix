@@ -1,4 +1,4 @@
-{ vimUtils, fetchFromGitHub }:
+{ vimUtils, fetchFromGitHub, pkgs }:
 {
   ale = vimUtils.buildVimPluginFrom2Nix {
     name = "ale-2017-07-10";
@@ -97,5 +97,35 @@
       sha256 = "1b3jhapb862kmwp8arjnq470r47qmc2dqa5x1qk7gbl82i8m3n3d";
     };
     dependencies = [];
+  };
+
+  vimpager = vimUtils.buildVimPluginFrom2Nix {
+    name = "vimpager-2017-11-25";
+    src = fetchFromGitHub {
+      owner = "rkitover";
+      repo = "vimpager";
+      rev = "f03db2eb63993d85974913ff017d684069530e87";
+      sha256 = "07asj1ggdxk1bx3p0raczwj830kd3hbnra1plm5gmq0lcymnpgfw";
+    };
+    dependencies = [];
+  };
+
+  languageclient = vimUtils.buildVimPluginFrom2Nix {
+    name = "LanguageClient-neovim-2017-11-25";
+    src = fetchFromGitHub {
+      owner = "autozimu";
+      repo = "LanguageClient-neovim";
+      rev = "55bbfacdff17689a52709261d40a16c90274195c";
+      sha256 = "1rz5b5hicbrd5f6dns1x68vzyizfmpvkfqr8331a0arxbfsm80zs";
+    };
+    dependencies = [];
+    buildInputs = [ pkgs.rustChannels.stable.rust ];
+    buildPhase = ''
+      export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
+      export HOME=$TMP
+      ulimit -S -a
+      patchShebangs .
+      ./install.sh || ./install.sh
+    '';
   };
 }
