@@ -127,6 +127,7 @@
       name = "cli-utils";
       paths = [
         dmidecode
+        exfat-utils
         file
         fzf
         htop
