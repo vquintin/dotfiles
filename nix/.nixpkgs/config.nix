@@ -167,6 +167,7 @@
       name = "media-text";
       paths = [
         calibre
+        k2pdfopt
         libreoffice
         open-dyslexic
         pandoc
@@ -210,6 +211,7 @@
       name = "games";
       paths = [
         steam
+        openttd
       ];
     };
 
