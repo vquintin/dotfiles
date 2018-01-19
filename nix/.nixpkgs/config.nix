@@ -107,6 +107,7 @@
         pasystray
         pavucontrol
         powerline-fonts
+        qutebrowser
         termite
         thunderbird
         xfce.thunar
