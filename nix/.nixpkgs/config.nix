@@ -108,10 +108,12 @@
         pavucontrol
         powerline-fonts
         qutebrowser
+        st
         termite
         thunderbird
         xfce.thunar
         xfce.thunar_volman
+        xpra
         xscreensaver
       ];
     };
@@ -168,7 +170,6 @@
       name = "media-text";
       paths = [
         calibre
-        k2pdfopt
         libreoffice
         open-dyslexic
         pandoc
@@ -212,7 +213,6 @@
       name = "games";
       paths = [
         steam
-        openttd
       ];
     };
 
