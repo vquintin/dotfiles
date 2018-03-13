@@ -27,8 +27,14 @@
     home_server = with pkgs; buildEnv {
       name = "home-server";
       paths = [
+        accounting
+        dev_gui_env
         cli_utils
         dev_cli_env
+        media_picture
+        media_sound
+        media_video
+        media_text
       ];
     };
 
