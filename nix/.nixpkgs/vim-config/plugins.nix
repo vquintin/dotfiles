@@ -110,6 +110,28 @@
     dependencies = [];
   };
 
+  vim-async = vimUtils.buildVimPluginFrom2Nix {
+    name = "async.vim-2018-1-28";
+    src = fetchFromGitHub {
+      owner = "prabirshrestha";
+      repo = "async.vim";
+      rev = "f29f6167a1ef431b8c34587a80ed44e8fdc669d4";
+      sha256 = "0s6ycxn212yrf9x79yx5cn5vga6y331grck4zfq43h2z0n7h998k";
+    };
+    dependencies = [];
+  };
+
+  vim-lsp = vimUtils.buildVimPluginFrom2Nix {
+    name = "lsp-vim-2018-1-20";
+    src = fetchFromGitHub {
+      owner = "prabirshrestha";
+      repo = "vim-lsp";
+      rev = "2e4954cc9e22dec52f025f581ff292c53bb4ae52";
+      sha256 = "15d4l92g5r0qbmp2qqhsdbvf6zgz4scjsl85za5jk3q11d42j86f";
+    };
+    dependencies = [];
+  };
+
   languageclient = vimUtils.buildVimPluginFrom2Nix {
     name = "LanguageClient-neovim-2017-11-25";
     src = fetchFromGitHub {

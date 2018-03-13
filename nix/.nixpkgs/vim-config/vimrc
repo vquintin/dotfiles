@@ -43,7 +43,7 @@ let g:ale_sign_warning = '⚠'
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['hie', '--lsp'],
+    \ 'haskell': ['hie-8.0', '--ekg', '--lsp'],
     \ }
 
 " Automatically start language servers.

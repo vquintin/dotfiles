@@ -78,6 +78,7 @@
         atom
         dev_cli_env
         jetbrains.idea-community
+        mysql-workbench
         vscode
       ];
     };
@@ -112,10 +113,13 @@
         pasystray
         pavucontrol
         powerline-fonts
+        qutebrowser
+        st
         termite
         thunderbird
         xfce.thunar
         xfce.thunar_volman
+        xpra
         xscreensaver
       ];
     };
@@ -132,6 +136,7 @@
       name = "cli-utils";
       paths = [
         dmidecode
+        exfat-utils
         file
         fzf
         htop
