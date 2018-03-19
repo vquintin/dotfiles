@@ -27,14 +27,15 @@
     home_server = with pkgs; buildEnv {
       name = "home-server";
       paths = [
-        accounting
+#        accounting
+        basic_gui_env
         dev_gui_env
         cli_utils
         dev_cli_env
-        media_picture
-        media_sound
-        media_video
-        media_text
+#        media_picture
+#        media_sound
+#        media_video
+#        media_text
       ];
     };
 
@@ -119,7 +120,7 @@
         thunderbird
         xfce.thunar
         xfce.thunar_volman
-        xpra
+        xorg.setxkbmap
         xscreensaver
       ];
     };
