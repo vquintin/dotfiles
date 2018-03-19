@@ -70,6 +70,7 @@
         phantomjs2
         ruby_2_4
         vagrant
+        visualvm
       ];
     };
 
@@ -89,7 +90,7 @@
       paths = [
         ammonite
         my_vim
-        git
+        gitFull
         go
         python
         ripgrep
@@ -103,6 +104,7 @@
     basic_gui_env = with pkgs; buildEnv {
       name = "basic-gui-env";
       paths = [
+        alacritty
         awesome
         cli_utils
         cups
@@ -143,6 +145,7 @@
         htop
         iotop
         lsof
+        lm_sensors
         pciutils
         psmisc
         pv
