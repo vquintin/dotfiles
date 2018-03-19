@@ -122,6 +122,7 @@
         thunderbird
         xfce.thunar
         xfce.thunar_volman
+        gksu
         xorg.setxkbmap
         xscreensaver
       ];
