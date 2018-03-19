@@ -139,6 +139,7 @@
     cli_utils = with pkgs; buildEnv {
       name = "cli-utils";
       paths = [
+        bind
         dmidecode
         exfat-utils
         file
