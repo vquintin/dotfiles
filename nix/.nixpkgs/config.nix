@@ -27,8 +27,15 @@
     home_server = with pkgs; buildEnv {
       name = "home-server";
       paths = [
+#        accounting
+        basic_gui_env
+        dev_gui_env
         cli_utils
         dev_cli_env
+#        media_picture
+#        media_sound
+#        media_video
+#        media_text
       ];
     };
 
@@ -63,6 +70,7 @@
         phantomjs2
         ruby_2_4
         vagrant
+        visualvm
       ];
     };
 
@@ -82,7 +90,7 @@
       paths = [
         ammonite
         my_vim
-        git
+        gitFull
         go
         python
         ripgrep
@@ -96,6 +104,7 @@
     basic_gui_env = with pkgs; buildEnv {
       name = "basic-gui-env";
       paths = [
+        alacritty
         awesome
         cli_utils
         cups
@@ -113,7 +122,7 @@
         thunderbird
         xfce.thunar
         xfce.thunar_volman
-        xpra
+        xorg.setxkbmap
         xscreensaver
       ];
     };
@@ -137,6 +146,7 @@
         htop
         iotop
         lsof
+        lm_sensors
         pciutils
         psmisc
         pv
