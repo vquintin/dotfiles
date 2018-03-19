@@ -110,10 +110,12 @@
         pavucontrol
         powerline-fonts
         qutebrowser
+        st
         termite
         thunderbird
         xfce.thunar
         xfce.thunar_volman
+        xpra
         xscreensaver
       ];
     };
