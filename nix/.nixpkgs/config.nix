@@ -27,17 +27,19 @@
     home_server = with pkgs; buildEnv {
       name = "home-server";
       paths = [
-#        accounting
+        accounting
         basic_gui_env
         dev_gui_env
         cli_utils
         dev_cli_env
-#        media_picture
-#        media_sound
-#        media_video
-#        media_text
+        media_picture
+        media_sound
+        media_video
+        media_text
       ];
     };
+
+    jvm_stuff = import ./dev/jvm-stuff {inherit pkgs;};
 
     home_gui = with pkgs; buildEnv {
       name = "home-gui";
@@ -73,6 +75,8 @@
         visualvm
       ];
     };
+
+    my_fonts = import ./my_fonts.nix { inherit pkgs;};
 
     dev_gui_env = with pkgs; buildEnv {
       name = "dev-gui-env";
@@ -110,6 +114,7 @@
         cups
         evince
         firefox
+        my_fonts
         gnome3.file-roller
         gui_utils
         lightdm
@@ -189,37 +194,9 @@
       ];
     };
 
-    media_picture = with pkgs; buildEnv {
-      name = "media-picture";
-      paths = [
-        feh
-        gphoto2
-        gimp
-        graphviz
-        rawtherapee
-        shotwell
-        ufraw
-        xfce.ristretto
-      ];
-    };
-
-    media_sound = with pkgs; buildEnv {
-      name = "media-sound";
-      paths = [
-        clementine
-      ];
-    };
-
-    media_video = with pkgs; buildEnv {
-      name = "media-video";
-      paths = [
-        kodi
-        mpv
-        smplayer
-        vdpauinfo
-        vlc
-      ];
-    };
+    media_picture = import ./media/picture { inherit pkgs;};
+    media_sound = import ./media/sound { inherit pkgs;};
+    media_video = import ./media/video { inherit pkgs;};
 
     games = with pkgs; buildEnv {
       name = "games";
