@@ -68,11 +68,9 @@
         nodePackages.grunt-cli
         nodePackages.npm
         nodejs
-        openjdk
         phantomjs2
         ruby_2_4
         vagrant
-        visualvm
       ];
     };
 
@@ -83,7 +81,6 @@
       paths = [
         atom
         dev_cli_env
-        jetbrains.idea-community
         mysql-workbench
         vscode
       ];
@@ -92,16 +89,12 @@
     dev_cli_env = with pkgs; buildEnv {
       name = "dev-cli-env";
       paths = [
-        ammonite
         my_vim
         gitFull
         go
         python
         ripgrep
         rustup
-        scala
-        sbt
-        stack
       ];
     };
 
@@ -183,20 +176,11 @@
       ];
     };
 
-    media_text = with pkgs; buildEnv {
-      name = "media-text";
-      paths = [
-        calibre
-        libreoffice
-        open-dyslexic
-        pandoc
-        texlive.combined.scheme-full
-      ];
-    };
 
     media_picture = import ./media/picture { inherit pkgs;};
     media_sound = import ./media/sound { inherit pkgs;};
     media_video = import ./media/video { inherit pkgs;};
+    media_text = import ./media/text { inherit pkgs;};
 
     games = with pkgs; buildEnv {
       name = "games";
