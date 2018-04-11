@@ -7,8 +7,7 @@
   ];
 
   packageOverrides = pkgs_: with pkgs_; {
-    my_vim = import ./vim-config { inherit pkgs ; };
-    vimpager = import ./vimpager { inherit pkgs ; };
+    dev-all = import ./packages/dev { inherit pkgs ; };
 
     home_laptop = with pkgs; buildEnv {
       name = "home-laptop";
@@ -39,7 +38,6 @@
       ];
     };
 
-    jvm_stuff = import ./dev/jvm-stuff {inherit pkgs;};
 
     home_gui = with pkgs; buildEnv {
       name = "home-gui";
@@ -89,7 +87,7 @@
     dev_cli_env = with pkgs; buildEnv {
       name = "dev-cli-env";
       paths = [
-        my_vim
+        dev-all
         gitFull
         go
         python
@@ -144,6 +142,7 @@
         fzf
         htop
         iotop
+        lshw
         lsof
         lm_sensors
         pciutils
@@ -152,6 +151,7 @@
         stow
         tree
         tmux
+        virtmanager
         usbutils
         unzip
         xxd
@@ -177,10 +177,10 @@
     };
 
 
-    media_picture = import ./media/picture { inherit pkgs;};
-    media_sound = import ./media/sound { inherit pkgs;};
-    media_video = import ./media/video { inherit pkgs;};
-    media_text = import ./media/text { inherit pkgs;};
+    media_picture = import ./packages/media/picture { inherit pkgs;};
+    media_sound = import ./packages/media/sound { inherit pkgs;};
+    media_video = import ./packages/media/video { inherit pkgs;};
+    media_text = import ./packages/media/text { inherit pkgs;};
 
     games = with pkgs; buildEnv {
       name = "games";

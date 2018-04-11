@@ -1,7 +1,7 @@
 { pkgs }:
 
 let
-my_plugins = import ./plugins.nix { inherit (pkgs) vimUtils fetchFromGitHub pkgs; };
+ my_plugins = import ./plugins.nix { inherit (pkgs) vimUtils fetchFromGitHub pkgs; };
 
 in with pkgs; vim_configurable.customize {
   name = "vim";
@@ -10,6 +10,8 @@ in with pkgs; vim_configurable.customize {
     vam.knownPlugins = vimPlugins // my_plugins;
     vam.pluginDictionaries = [
       { names = [
+        "sensible"
+        "vim-bepo"
         "ale"
         "ctrlp"
         "vim-addon-nix"
@@ -20,19 +22,17 @@ in with pkgs; vim_configurable.customize {
         "vim-airline"
         "vim-airline-themes"
         "sleuth"
-        "vim-bepo"
         "vim-go"
         "vimproc"
         "elm-vim"
         "nim-vim"
         "hexmode"
         "haskell-vim"
+        "vim-async"
+        "vim-lsp"
 #        "Hoogle"
 #        "ghc-mod-vim"
 #        "stylish-haskell"
-        "vim-scala"
-        "vimpager"
-        "languageclient"
       ]; }
     ];
   };
