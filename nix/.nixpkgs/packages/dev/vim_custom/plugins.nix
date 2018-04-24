@@ -150,4 +150,34 @@
       ./install.sh || ./install.sh
     '';
   };
+
+  ensime-vim = vimUtils.buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "ensime-vim-2017-08-27";
+    src = fetchFromGitHub {
+      owner = "ensime";
+      repo = "ensime-vim";
+      rev = "d992b971a84afdfb2d99896d8aed537030e09a80";
+      sha256 = "1rhrq3zplvpyli1ymqjmhq91p61ixpjz1v5xf68nvq4ax50nl45z";
+    };
+    patches = [ 
+      ./ensime-vim/0001-Add-dependencies-to-python-path.patch 
+      ./ensime-vim/0002-Refactor.patch
+    ];
+    dependencies = ["vimproc" "vimshell" "self" "forms"];
+    pythonDependencies = with pkgs.pythonPackages; [ sexpdata websocket_client ];
+    buildInputs = with pkgs.pythonPackages; [ sexpdata websocket_client ];
+    buildPhase = ''
+      substituteInPlace plugin/ensime.vim \
+        --replace "__SIX_PATH__" \
+        "${pkgs.python27Packages.six}/lib/python2.7/site-packages"
+
+      substituteInPlace plugin/ensime.vim \
+        --replace "__SEXPDATA_PATH__" \
+        "${pkgs.python27Packages.sexpdata}/lib/python2.7/site-packages"
+
+      substituteInPlace plugin/ensime.vim \
+        --replace "__WEBSOCKET_CLIENT_PATH__" \
+        "${pkgs.python27Packages.websocket_client}/lib/python2.7/site-packages"
+    '';
+  };
 }

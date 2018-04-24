@@ -1,0 +1,38 @@
+From edccf893f3dc4edc78d705c5709654c93c1e9137 Mon Sep 17 00:00:00 2001
+From: Virgile Quintin <vquintin@mediarithmics.com>
+Date: Tue, 24 Apr 2018 12:10:07 +0200
+Subject: [PATCH] Refactor
+
+---
+ plugin/ensime.vim | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/plugin/ensime.vim b/plugin/ensime.vim
+index 35ccfbd..0379941 100644
+--- a/plugin/ensime.vim
++++ b/plugin/ensime.vim
+@@ -22,9 +22,19 @@ function! s:DependenciesValid() abort
+     python <<PY
+ import vim
+ import sys
++import importlib
+ 
+-sys.path.append('__SEXPDATA_PATH__')
+-sys.path.append('__WEBSOCKET_CLIENT_PATH__')
++def addIfNotInPath( module, modulePath ):
++    try:
++        m = importlib.import_module(modulePath)
++        del m
++    except ImportError:
++        sys.path.append(modulePath)
++
++
++addIfNotInPath('six', '__SIX_PATH__')
++addIfNotInPath('sexpdata', '__SEXPDATA_PATH__')
++addIfNotInPath('websocket', '__WEBSOCKET_CLIENT_PATH__')
+ 
+ # TODO: officially drop Vim < 7.4 support, inform users and don't load plugin
+ VIM74 = hasattr(vim, 'vars')
+-- 
+2.15.0
+

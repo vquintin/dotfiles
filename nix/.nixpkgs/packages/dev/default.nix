@@ -10,6 +10,8 @@ in with pkgs; buildEnv {
     jvm_stuff
     haskell
     vim_custom
+    python27Packages.sexpdata
+    python27Packages.websocket_client
   ];
 }
 

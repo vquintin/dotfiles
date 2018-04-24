@@ -1,0 +1,27 @@
+From 87071381b791f5dd5452c5ce6b89e5b7467efbbf Mon Sep 17 00:00:00 2001
+From: Virgile Quintin <vquintin@mediarithmics.com>
+Date: Tue, 24 Apr 2018 11:24:50 +0200
+Subject: [PATCH] Add dependencies to python path
+
+---
+ plugin/ensime.vim | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/plugin/ensime.vim b/plugin/ensime.vim
+index 1cc2e79..35ccfbd 100644
+--- a/plugin/ensime.vim
++++ b/plugin/ensime.vim
+@@ -21,6 +21,10 @@ endif
+ function! s:DependenciesValid() abort
+     python <<PY
+ import vim
++import sys
++
++sys.path.append('__SEXPDATA_PATH__')
++sys.path.append('__WEBSOCKET_CLIENT_PATH__')
+ 
+ # TODO: officially drop Vim < 7.4 support, inform users and don't load plugin
+ VIM74 = hasattr(vim, 'vars')
+-- 
+2.15.0
+
