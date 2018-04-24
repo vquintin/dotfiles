@@ -9,7 +9,8 @@ urxvt*urgentOnBell:       true
 urxvt*borderLess:         false
 urxvt*internalBorder:        0
 urxvt*externalBorder:        0
-URxvt*font: xft:Inconsolata\ for\ Powerline:size=15
+URxvt*font: xft:DejaVuSansMono:size=15
+
 
 ! Keep it to avoid blinking at opening when using base16
 ! Solarized color scheme for the X Window System
