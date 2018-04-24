@@ -113,6 +113,7 @@
         pavucontrol
         powerline-fonts
         qutebrowser
+        rxvt_unicode
         st
         termite
         thunderbird
