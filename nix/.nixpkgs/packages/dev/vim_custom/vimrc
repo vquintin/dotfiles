@@ -17,6 +17,8 @@ set hlsearch
 set history=700
 set relativenumber
 set laststatus=2
+set cursorline
+set cursorcolumn
 
 set hidden
 
@@ -29,7 +31,11 @@ set confirm
 
 set visualbell
 
-colorscheme molokai
+set background=light
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
 let g:airline_theme = 'molokai'
 
 " CTRL-P
