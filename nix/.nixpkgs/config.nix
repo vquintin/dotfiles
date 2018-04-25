@@ -142,6 +142,7 @@
         file
         fzf
         htop
+        keychain
         iotop
         lshw
         lsof

@@ -6,6 +6,8 @@ case $TERM in
     ;;
 esac
 
+eval `keychain --eval --agents ssh id_rsa`
+
 export SBT_OPTS="-Dsbt.override.build.repos=true"
 export SBT_CREDENTIALS="$HOME/.ivy2/.credentials"
 export DEV_HOME="$HOME/dev"
