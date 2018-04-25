@@ -1,4 +1,11 @@
 source ~/.zshrc.common
+
+case $TERM in
+  rxvt*)
+    precmd () {print -Pn "\e]0;%~\a"}
+    ;;
+esac
+
 export SBT_OPTS="-Dsbt.override.build.repos=true"
 export SBT_CREDENTIALS="$HOME/.ivy2/.credentials"
 export DEV_HOME="$HOME/dev"
