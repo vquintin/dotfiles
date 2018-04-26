@@ -17,3 +17,11 @@ bindkey '^[[Z' reverse-menu-complete
 EDITOR=vim
 PATH=$PATH:~/.local/bin
 
+case $TERM in
+  rxvt*)
+    precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+    ;;
+esac
+
+eval `keychain --eval --agents ssh id_rsa`
+
