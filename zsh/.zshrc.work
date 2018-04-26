@@ -8,4 +8,8 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
+
 SBT_OPTS="-Xmx1536M -XX:MaxMetaspaceSize=384m"
+
+eval `keychain --eval --nogui --agents ssh id_rsa private_server`
+

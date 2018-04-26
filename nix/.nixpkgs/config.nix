@@ -117,6 +117,7 @@
         st
         termite
         thunderbird
+        urxvt_font_size
         xfce.thunar
         xfce.thunar_volman
         gksu
