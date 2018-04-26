@@ -10,6 +10,7 @@ urxvt*borderLess:         false
 urxvt*internalBorder:        0
 urxvt*externalBorder:        0
 URxvt*font: xft:DejaVuSansMono:size=12
+URxvt.perl-ext-common: font-size
 
 
 ! Keep it to avoid blinking at opening when using base16
