@@ -33,6 +33,8 @@ in with pkgs; vim_configurable.customize {
         "vim-lsp"
         "vim-scala"
         "ensime-vim"
+        "The_NERD_tree"
+        "rainbow"
 #        "Hoogle"
 #        "ghc-mod-vim"
 #        "stylish-haskell"
