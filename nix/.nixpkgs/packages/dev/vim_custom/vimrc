@@ -38,6 +38,8 @@ let g:solarized_visibility="high"
 colorscheme solarized
 let g:airline_theme = 'molokai'
 
+let mapleader = "ç"
+
 " CTRL-P
 set grepprg=rg\ --vimgrep
 " bind K to grep word under cursor
@@ -69,6 +71,23 @@ if executable('hie')
       \ })
 endif
 
+" Nerd tree
+silent! map <F2> :NERDTreeToggle<CR>
+silent! map <F3> :NERDTreeFind<CR>
+let g:NERDTreeMapOpenInTab="h"
+let g:NERDTreeMapOpenInTabSilent="H"
+let g:NERDTreeMapOpenVSplit="k"
+let g:NERDTreeMapJumpFirstChild="S"
+let g:NERDTreeMapJumpLastChild="T"
+let g:NERDTreeMapJumpNextSibling="<C-T>"
+let g:NERDTreeMapJumpPrevSibling="<C-S>"
+let g:NERDTreeMapChangeRoot="L"
+let g:NERDTreeMapRefresh="j"
+let g:NERDTreeMapRefreshRoot="J"
+let g:NERDTreeToggle="<F2>"
+let g:NERDTreeMapActivateNode="<F3>"
+let g:NERDTreeMapPreview="<F4>"
+
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
 
@@ -98,3 +117,6 @@ autocmd FileType haskell nmap <silent> <leader>i :GhcModType<CR>
 autocmd FileType haskell nmap <silent> <leader>c :GhcModTypeClear<CR>
 autocmd FileType haskell nmap <silent> <leader>g :GhcModSigCodegen<CR>
 
+" Scala
+autocmd FileType scala nmap <silent> <leader>h :EnType<CR>
+autocmd BufWritePost *.scala silent :EnTypeCheck

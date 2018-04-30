@@ -29,3 +29,6 @@ if [ -n "${commands[fzf-share]}" ]; then
 fi
 export FZF_DEFAULT_OPTS='--bind ctrl-t:down,ctrl-s:up'
 
+# Disable Ctrl-s
+stty -ixon
+
