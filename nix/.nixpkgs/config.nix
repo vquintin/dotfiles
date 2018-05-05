@@ -49,7 +49,7 @@
         internet_prgms
         media_picture
         media_sound
-        media_video
+        media_video.media_video
         media_text
       ];
     };
