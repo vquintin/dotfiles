@@ -4,7 +4,6 @@
       name = "media-video";
       paths = [
         kodi
-        mpv
         smplayer
         vdpauinfo
         vlc

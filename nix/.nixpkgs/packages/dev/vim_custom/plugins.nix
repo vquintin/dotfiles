@@ -151,6 +151,18 @@
     '';
   };
 
+  intero-neovim = vimUtils.buildVimPluginFrom2Nix {
+    name = "intero-neovim";
+    src = fetchFromGitHub {
+      owner = "parsonsmatt";
+      repo = "intero-neovim";
+      rev = "26d340ab0d6e8d40cbafaf72dac0588ae901c117";
+      sha256 = "0y4bbbj6v9jq825ffpdx03hi6ldszqh2zxasc6h1b0vkpjmdc8y3";
+    };
+    dependencies = [];
+  };
+
+
   ensime-vim = vimUtils.buildVimPluginFrom2Nix { # created by nix#NixDerivation
     name = "ensime-vim-2017-08-27";
     src = fetchFromGitHub {

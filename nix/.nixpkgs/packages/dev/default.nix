@@ -9,7 +9,8 @@ in with pkgs; buildEnv {
   paths = [
     jvm_stuff
     haskell
-    vim_custom
+    vim_custom.vim
+    vim_custom.hsvim
     python27Packages.sexpdata
     python27Packages.websocket_client
   ];
