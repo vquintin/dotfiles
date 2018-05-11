@@ -57,3 +57,11 @@ let g:NERDTreeToggle="<F2>"
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 
+
+" fzf
+map <C-p> :Files<CR>
+let g:fzf_action = {
+                        \ 'ctrl-j': 'tab split',
+                        \ 'ctrl-x': 'split',
+                        \ 'ctrl-v': 'vsplit' }
+
