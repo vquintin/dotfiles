@@ -1,6 +1,6 @@
-{ pkgs}:
+{ oldStable, stable, unstable }:
 {
-  my_fonts = with pkgs; buildEnv {
+  my_fonts = with stable; buildEnv {
     name = "my-fonts";
     paths = [
       dejavu_fonts

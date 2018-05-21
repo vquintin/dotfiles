@@ -1,5 +1,5 @@
-{ pkgs }:
-with pkgs; stdenv.mkDerivation {
+{ oldStable, stable, unstable }:
+with stable; stdenv.mkDerivation {
   name="vimpager-2.06";
   builder=./builder.sh;
   src = fetchFromGitHub {

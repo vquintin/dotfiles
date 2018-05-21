@@ -1,6 +1,6 @@
-{pkgs}:
+{ oldStable, stable, unstable }:
 {
-    media_text = with pkgs; buildEnv {
+    media_text = with stable; buildEnv {
       name = "media-text";
       paths = [
         calibre

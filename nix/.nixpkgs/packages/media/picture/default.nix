@@ -1,6 +1,6 @@
-{pkgs}:
+{ oldStable, stable, unstable }:
 {
-    media_picture = with pkgs; buildEnv {
+    media_picture = with stable; buildEnv {
       name = "media-picture";
       paths = [
         feh

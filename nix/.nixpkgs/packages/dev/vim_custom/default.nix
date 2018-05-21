@@ -1,7 +1,7 @@
-{ pkgs }:
+{ oldStable, stable, unstable }:
 
 let
-my_plugins = import ./plugins.nix { inherit (pkgs) vimUtils fetchFromGitHub pkgs; };
+my_plugins = import ./plugins.nix { inherit stable; };
 
 basePlugins = [
   "sensible"
@@ -14,14 +14,14 @@ basePlugins = [
   "fzf-vim"
 ];
 
-hsvim = pkgs.neovim.override {
+hsvim = stable.neovim.override {
   configure = {
     customRC = 
     ''
       source ${./base.vim}
       source ${./haskell.vim}
     '';
-    vam.knownPlugins = pkgs.vimPlugins // my_plugins;
+    vam.knownPlugins = stable.vimPlugins // my_plugins;
     vam.pluginDictionaries = [
     {
       names = basePlugins ++ [
@@ -36,7 +36,7 @@ hsvim = pkgs.neovim.override {
   };
 };
 
-in with pkgs; {
+in with stable; {
   vim = vim_configurable.customize {
     name = "vim";
     vimrcConfig = {
