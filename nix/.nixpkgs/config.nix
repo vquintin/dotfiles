@@ -6,10 +6,16 @@
     "webkitgtk-2.4.11"
   ];
 
-  packageOverrides = pkgs_: with pkgs_; {
-    dev-all = import ./packages/dev { inherit pkgs ; };
+  packageOverrides = bootstrap:
+    let
+      loadPkgs = import ./loadPkgs.nix;
+      oldStable = loadPkgs bootstrap ./oldstable.json;
+      stable = loadPkgs bootstrap ./stable.json;
+      unstable = loadPkgs bootstrap ./unstable.json;
+    in with stable; {
+    dev-all = import ./packages/dev { inherit oldStable stable unstable; };
 
-    home_laptop = with pkgs; buildEnv {
+    home_laptop = buildEnv {
       name = "home-laptop";
       paths = [
         blueman
@@ -23,7 +29,7 @@
       ];
     };
 
-    home_server = with pkgs; buildEnv {
+    home_server = buildEnv {
       name = "home-server";
       paths = [
         accounting
@@ -39,7 +45,7 @@
     };
 
 
-    home_gui = with pkgs; buildEnv {
+    home_gui = buildEnv {
       name = "home-gui";
       paths = [
         accounting
@@ -54,7 +60,7 @@
       ];
     };
 
-    mics_desktop = with pkgs; buildEnv {
+    mics_desktop = buildEnv {
       name = "mics-desktop";
       paths = [
         basic_gui_env
@@ -72,9 +78,9 @@
       ];
     };
 
-    my_fonts = import ./my_fonts.nix { inherit pkgs;};
+    my_fonts = import ./my_fonts.nix { inherit oldStable stable unstable;};
 
-    dev_gui_env = with pkgs; buildEnv {
+    dev_gui_env = buildEnv {
       name = "dev-gui-env";
       paths = [
         atom
@@ -84,7 +90,7 @@
       ];
     };
 
-    dev_cli_env = with pkgs; buildEnv {
+    dev_cli_env = buildEnv {
       name = "dev-cli-env";
       paths = [
         dev-all
@@ -96,7 +102,7 @@
       ];
     };
 
-    basic_gui_env = with pkgs; buildEnv {
+    basic_gui_env = buildEnv {
       name = "basic-gui-env";
       paths = [
         alacritty
@@ -126,7 +132,7 @@
       ];
     };
 
-    basic_env = with pkgs; buildEnv {
+    basic_env = buildEnv {
       name = "basic-env";
       paths = [
         cli_utils
@@ -134,7 +140,7 @@
       ];
     };
 
-    cli_utils = with pkgs; buildEnv {
+    cli_utils = buildEnv {
       name = "cli-utils";
       paths = [
         bind
@@ -161,7 +167,7 @@
       ];
     };
 
-    gui_utils = with pkgs; buildEnv {
+    gui_utils = buildEnv {
       name = "gui-utils";
       paths = [
         baobab
@@ -171,7 +177,7 @@
       ];
     };
 
-    internet_prgms = with pkgs; buildEnv {
+    internet_prgms = buildEnv {
       name = "internet-pgrms";
       paths = [
         transmission_remote_gtk
@@ -180,19 +186,19 @@
     };
 
 
-    media_picture = import ./packages/media/picture { inherit pkgs;};
-    media_sound = import ./packages/media/sound { inherit pkgs;};
-    media_video = import ./packages/media/video { inherit pkgs;};
-    media_text = import ./packages/media/text { inherit pkgs;};
+    media_picture = import ./packages/media/picture { inherit oldStable stable unstable;};
+    media_sound = import ./packages/media/sound { inherit oldStable stable unstable;};
+    media_video = import ./packages/media/video { inherit oldStable stable unstable;};
+    media_text = import ./packages/media/text { inherit oldStable stable unstable;};
 
-    games = with pkgs; buildEnv {
+    games = buildEnv {
       name = "games";
       paths = [
         steam
       ];
     };
 
-    accounting = with pkgs; buildEnv {
+    accounting = buildEnv {
       name = "accounting";
       paths = [
         gnucash26

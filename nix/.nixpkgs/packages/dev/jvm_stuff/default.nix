@@ -1,22 +1,22 @@
-{pkgs}:
+{ oldStable, stable, unstable }:
 let
-  oldnixpkgs = builtins.fromJSON (builtins.readFile ./oldnixpkgs.json);
-  src = pkgs.fetchFromGitHub {
-    owner = "NixOS";
-    repo = "nixpkgs";
-    inherit (oldnixpkgs) rev sha256;
+  sbtixSrc = stable.fetchFromGitHub {
+    owner = "teozkr";
+    repo = "Sbtix";
+    inherit (builtins.fromJSON (builtins.readFile ./sbtix.json)) rev sha256;
   };
-  oldPkgs = import src { };
+  sbtix = import sbtixSrc { };
 in
-with pkgs; buildEnv {
+with stable; buildEnv {
   name = "jvm-stuff";
   paths = [
     ammonite
-    oldPkgs.jetbrains.idea-community
-    openjdk
+    oldStable.jetbrains.idea-community
     scala
     sbt
+    sbtix
     visualvm
+    unstable.graalvm8
   ];
 }
 

@@ -1,4 +1,8 @@
-{ vimUtils, fetchFromGitHub, pkgs }:
+{ stable }:
+let
+  vimUtils = stable.vimUtils;
+  fetchFromGitHub = stable.fetchFromGitHub;
+in
 {
   ale = vimUtils.buildVimPluginFrom2Nix {
     name = "ale-2017-07-10";
@@ -141,7 +145,7 @@
       sha256 = "1rz5b5hicbrd5f6dns1x68vzyizfmpvkfqr8331a0arxbfsm80zs";
     };
     dependencies = [];
-    buildInputs = [ pkgs.rustChannels.stable.rust ];
+    buildInputs = [ stable.rustChannels.stable.rust ];
     buildPhase = ''
       export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
       export HOME=$TMP
@@ -176,20 +180,20 @@
       ./ensime-vim/0002-Refactor.patch
     ];
     dependencies = ["vimproc" "vimshell" "self" "forms"];
-    pythonDependencies = with pkgs.pythonPackages; [ sexpdata websocket_client ];
-    buildInputs = with pkgs.pythonPackages; [ sexpdata websocket_client ];
+    pythonDependencies = with stable.pythonPackages; [ sexpdata websocket_client ];
+    buildInputs = with stable.pythonPackages; [ sexpdata websocket_client ];
     buildPhase = ''
       substituteInPlace plugin/ensime.vim \
         --replace "__SIX_PATH__" \
-        "${pkgs.python27Packages.six}/lib/python2.7/site-packages"
+        "${stable.python27Packages.six}/lib/python2.7/site-packages"
 
       substituteInPlace plugin/ensime.vim \
         --replace "__SEXPDATA_PATH__" \
-        "${pkgs.python27Packages.sexpdata}/lib/python2.7/site-packages"
+        "${stable.python27Packages.sexpdata}/lib/python2.7/site-packages"
 
       substituteInPlace plugin/ensime.vim \
         --replace "__WEBSOCKET_CLIENT_PATH__" \
-        "${pkgs.python27Packages.websocket_client}/lib/python2.7/site-packages"
+        "${stable.python27Packages.websocket_client}/lib/python2.7/site-packages"
     '';
   };
 }

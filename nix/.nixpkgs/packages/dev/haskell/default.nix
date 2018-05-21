@@ -1,6 +1,6 @@
-{pkgs}:
+{ oldStable, stable, unstable }:
 
-with pkgs; buildEnv {
+with stable; buildEnv {
   name = "haskell-stuff";
   paths = [
     cabal2nix
