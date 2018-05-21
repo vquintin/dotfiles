@@ -5,7 +5,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:neomake_open_list = 2
 let g:intero_backend = {
         \ 'command': 'intero',
-        \ 'options': '',
+        \ 'options': '-isrc',
         \ 'cwd': expand('% :p:h')
         \ }
 

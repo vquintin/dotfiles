@@ -59,7 +59,7 @@ let g:NERDTreeMapPreview="<F4>"
 
 
 " fzf
-map <C-p> :Files<CR>
+map <C-N> :Files<CR>
 let g:fzf_action = {
                         \ 'ctrl-j': 'tab split',
                         \ 'ctrl-x': 'split',

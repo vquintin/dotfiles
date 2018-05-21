@@ -4,6 +4,7 @@ let
 my_plugins = import ./plugins.nix { inherit (pkgs) vimUtils fetchFromGitHub pkgs; };
 
 basePlugins = [
+  "sensible"
   "vim-bepo"
   "Solarized"
   "vim-airline"
@@ -48,7 +49,6 @@ in with pkgs; {
       vam.pluginDictionaries = [
         { 
           names = basePlugins ++ [
-            "sensible"
             "ale"
             "vim-addon-nix"
             "youcompleteme"
