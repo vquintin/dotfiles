@@ -160,7 +160,6 @@
         stow
         tree
         tmux
-        virtmanager
         usbutils
         unzip
         xxd
