@@ -71,6 +71,7 @@
         media_text
         nodePackages.grunt-cli
         nodePackages.npm
+        unstable.nodePackages.node2nix
         nodejs
         phantomjs2
         ruby_2_4

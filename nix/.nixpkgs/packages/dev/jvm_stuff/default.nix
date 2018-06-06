@@ -44,9 +44,10 @@ in
 with stable; buildEnv {
   name = "jvm-stuff";
   paths = [
-    graal_jetbrains.idea-community
+    oldStable.jetbrains.idea-community
     sbt
     visualvm
+    openjdk
   ];
 }
 
