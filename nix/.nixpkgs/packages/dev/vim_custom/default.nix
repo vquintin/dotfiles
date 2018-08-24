@@ -26,10 +26,30 @@ hsvim = stable.neovim.override {
     {
       names = basePlugins ++ [
         "intero-neovim"
-          "deoplete-nvim"
-          "neco-ghc"
-          "neomake"
-          "haskell-vim"
+        "deoplete-nvim"
+        "neco-ghc"
+        "neomake"
+        "haskell-vim"
+      ];
+    }
+    ];
+  };
+};
+
+scalavim = stable.vim_configurable.customize {
+  name = "scalavim";
+  vimrcConfig = {
+    customRC =
+    ''
+      source ${./base.vim}
+      source ${./scala.vim}
+    '';
+    vam.knownPlugins = stable.vimPlugins // my_plugins;
+    vam.pluginDictionaries = [
+    {
+      names = basePlugins ++ [
+        "vim-scala"
+        "ensime-vim"
       ];
     }
     ];
@@ -63,8 +83,6 @@ in with stable; {
             "hexmode"
             "vim-async"
 #            "vim-lsp"
-#            "vim-scala"
-#            "ensime-vim"
             "rainbow"
 #          "Hoogle"
 #          "ghc-mod-vim"
@@ -83,4 +101,6 @@ in with stable; {
     '';
     meta = hsvim.meta;
   };
+
+  inherit scalavim;
 }

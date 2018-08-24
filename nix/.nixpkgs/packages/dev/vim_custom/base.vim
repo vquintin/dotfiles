@@ -18,7 +18,7 @@ set history=700
 set relativenumber
 set laststatus=2
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 
 set hidden
 

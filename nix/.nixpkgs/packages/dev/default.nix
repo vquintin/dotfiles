@@ -10,6 +10,7 @@ in with stable; buildEnv {
     haskell
     vim_custom.vim
     vim_custom.hsvim
+    vim_custom.scalavim
     python27Packages.sexpdata
     python27Packages.websocket_client
   ];
