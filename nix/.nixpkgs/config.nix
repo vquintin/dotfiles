@@ -70,9 +70,8 @@
         media_picture
         media_text
         nodePackages.grunt-cli
-        nodePackages.npm
         unstable.nodePackages.node2nix
-        nodejs
+        nodejs-8_x
         phantomjs2
         ruby_2_4
         vagrant

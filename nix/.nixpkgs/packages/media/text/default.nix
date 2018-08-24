@@ -7,7 +7,7 @@
         libreoffice
         open-dyslexic
         pandoc
-        texlive.combined.scheme-full
+        #texlive.combined.scheme-full
       ];
     };
 }
